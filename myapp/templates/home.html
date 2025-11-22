@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Art Gallery - Upload Drawings</title>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+
+      
+      .wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content {
+        flex: 1;
+      }
+
+      body {
+        background: #f5f5f5;
+      }
+
+      .header-box {
+        background: linear-gradient(135deg, black);
+        color:pink;
+        border-radius: 15px;
+        padding: 40px;
+        margin-top: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        font-family:Georgia, 'Times New Roman', Times, serif;
+      }
+
+      .gallery-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform .2s, box-shadow .2s;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+      }
+
+      .upload-btn {
+        background: #ff4757;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+      }
+
+      .upload-btn:hover {
+        background: #e84118;
+      }
+
+      /* Footer styling */
+      footer {
+        background:black;
+        padding: 15px;
+        text-align: center;
+        font-size: 14px;
+        color: pink;
+        border-top: 1px solid #dcdcdc;
+        font-style: italic;
+        font-family:'Times Roman';
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      <div class="content">
+
+        <div class="container">
+
+         
+          <div class="header-box text-center">
+            <h1 class="mb-3">Digital Art & Drawing Gallery</h1>
+            <p>Upload your artwork and showcase it beautifully 🎨</p>
+
+            <form action="" method="post" enctype="multipart/form-data" class="mt-4">
+              {% csrf_token %}
+              <div class="d-flex justify-content-center">
+                <div class="me-3">
+                  {{ form }}
+                </div>
+                <input type="submit" class="btn upload-btn text-white" value="Upload Drawing">
+              </div>
+            </form>
+          </div>
+
+         
+          <div class="row mt-5">
+            {% for x in img %}
+            <div class="col-md-4 col-lg-3 col-sm-6">
+              <div class="card gallery-card m-2">
+                <img src="{{ x.photo.url }}" class="card-img-top" alt="Artwork"
+                     height="220px" style="object-fit: cover;">
+                <div class="card-body text-center">
+                  <small class="text-muted">Uploaded on {{ x.date }}</small>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+
+      
+      <footer>
+        © 2025 Art Gallery | Built with ❤️ for artists
+      </footer>
+
+    </div>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
+
+
+
