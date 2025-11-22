@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import ImageForm
 
 from .models import Image
@@ -13,4 +13,10 @@ def home(request):
     form = ImageForm()
     img = Image.objects.all()
     return render(request,'home.html',{'img':img,'form':form})
+  
+def delete_img(request, id):
+    img = Image.objects.get(id=id)
+    img.delete()
+    return redirect('/')
+
 
