@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 import os
 import cloudinary
 
-
 load_dotenv()
 
 # ----------------------------
@@ -126,6 +125,7 @@ CLOUDINARY_STORAGE = {
 #     'API_SECRET': 'your_api_secret'
 # }
 
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # ----------------------------
@@ -139,7 +139,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if DEBUG:
     print("Cloudinary Cloud Name:", os.getenv("CLOUDINARY_CLOUD_NAME"))
     print("Cloudinary API Key:", os.getenv("CLOUDINARY_API_KEY"))
-
 
 
 
