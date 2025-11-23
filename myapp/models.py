@@ -1,9 +1,12 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
-# Create your models here.
+
 class Image(models.Model):
-    # photo = models.ImageField(upload_to='myimage')
+    title = models.CharField(max_length=100, blank=True)
     photo = CloudinaryField('image')
-    date = models.DateTimeField(auto_now_add= True)
-    
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title or f"Image {self.id}"
+
     
