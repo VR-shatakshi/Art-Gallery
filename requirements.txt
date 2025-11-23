@@ -4,3 +4,4 @@ whitenoise
 pillow
 cloudinary
 django-cloudinary-storage
+python-dotenv==1.1.1
