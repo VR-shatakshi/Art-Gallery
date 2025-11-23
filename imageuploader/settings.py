@@ -109,7 +109,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-<<<<<<< HEAD
+
 # ----------------------------
 # Cloudinary configuration
 # ----------------------------
@@ -118,13 +118,12 @@ CLOUDINARY_STORAGE = {
     'API_KEY': os.getenv("CLOUDINARY_API_KEY"),
     'API_SECRET': os.getenv("CLOUDINARY_API_SECRET"),
 }
-=======
+
 # CLOUDINARY_STORAGE = {
 #     'CLOUD_NAME': 'your_cloud_name',
 #     'API_KEY': 'your_api_key',
 #     'API_SECRET': 'your_api_secret'
 # }
->>>>>>> 13833fb (Updated settings and project configuration)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -140,8 +139,8 @@ if DEBUG:
     print("Cloudinary Cloud Name:", os.getenv("CLOUDINARY_CLOUD_NAME"))
     print("Cloudinary API Key:", os.getenv("CLOUDINARY_API_KEY"))
 
-<<<<<<< HEAD
-=======
+
+
 
 cloudinary.config(
     cloud_name=os.getenv("CLOUDINARY_CLOUD_NAME"),
@@ -149,4 +148,4 @@ cloudinary.config(
     api_secret=os.getenv("CLOUDINARY_API_SECRET"),
     
 )
->>>>>>> 13833fb (Updated settings and project configuration)
+
