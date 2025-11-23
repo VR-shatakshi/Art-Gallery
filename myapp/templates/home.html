@@ -42,7 +42,7 @@ footer { background: black; padding: 15px; text-align: center; font-size: 14px; 
               {{ form.title }}
               {{ form.photo }}
             </div>
-            <input type="submit" class="btn upload-btn text-white btn-primary" value="Upload Drawing">
+            <input type="submit" class="btn upload-btn text-white btn-danger" value="Upload Drawing">
           </div>
         </form>
       </div>
@@ -65,11 +65,7 @@ footer { background: black; padding: 15px; text-align: center; font-size: 14px; 
             </a>
 
             <div class="card-body text-center">
-              {% if x.title %}
-              <h5 class="card-title">{{ x.title }}</h5>
-             {% else %}
-             <h5 class="card-title">Untitled</h5>
-              {% endif %}
+              
                 <small class="text-muted">Uploaded on {{ x.date|localtime|date:"M d, Y H:i" }}</small>
             </div>
           </div>
