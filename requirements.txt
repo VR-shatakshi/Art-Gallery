@@ -5,3 +5,7 @@ pillow
 cloudinary
 django-cloudinary-storage
 python-dotenv==1.1.1
+<<<<<<< HEAD
+=======
+
+>>>>>>> 13833fb (Updated settings and project configuration)
