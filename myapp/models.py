@@ -1,5 +1,6 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+from cloudinary.utils import cloudinary_url
 
 class Image(models.Model):
     title = models.CharField(max_length=100, blank=True)
