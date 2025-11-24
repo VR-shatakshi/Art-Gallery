@@ -7,12 +7,18 @@ class Image(models.Model):
     photo = CloudinaryField('image')
     date = models.DateTimeField(auto_now_add=True)
 
-   @property
+    @property
     def permanent_url(self):
-        url, options = cloudinary_url(self.photo.public_id, secure=True)
+        url, options = cloudinary_url(
+            self.photo.public_id,
+            secure=True,
+            fetch_format="auto",
+            quality="auto"
+        )
         return url
 
     def __str__(self):
         return self.title or f"Image {self.id}"
+
 
     
